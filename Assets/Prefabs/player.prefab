@@ -1,5 +1,67 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1739038867750677087
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6417860927561514164}
+  m_Layer: 0
+  m_Name: palmR
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6417860927561514164
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1739038867750677087}
+  m_LocalRotation: {x: -0.000000059604638, y: 0.7071072, z: -0.70710653, w: 0.0000001490116}
+  m_LocalPosition: {x: -0.0352, y: 0.0247, z: 0.0046}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7727707246702184760}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: -180}
+--- !u!1 &2403937248538802760
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3178927936348829194}
+  m_Layer: 0
+  m_Name: palmL
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3178927936348829194
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2403937248538802760}
+  m_LocalRotation: {x: 0.70710665, y: 0.000000029802319, z: 0.00000017881392, w: 0.707107}
+  m_LocalPosition: {x: -0.0371, y: 0.0232, z: 0.0102}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7727707245963213143}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &7833146996479164265
 GameObject:
   m_ObjectHideFlags: 0
@@ -1574,6 +1636,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RightHand
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fa913981d66840043b655779c2f7d448, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: fa913981d66840043b655779c2f7d448, type: 3}
       propertyPath: m_Controller
       value: 
@@ -1673,7 +1739,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b35308448cfbf54494c5c8ebca674cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  controller: {fileID: 0}
+  followSpeed: 30
+  rotateSpeed: 100
+  positionOffset: {x: 0, y: 0, z: 0}
+  rotationOffset: {x: 0, y: 0, z: 0}
+  palm: {fileID: 6417860927561514164}
+  reachDistance: 0.1
+  joinDistance: 0.05
+  grabableLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!4 &7221622727946851193 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8607304493346783830, guid: fa913981d66840043b655779c2f7d448, type: 3}
@@ -1973,6 +2049,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: fa913981d66840043b655779c2f7d448, type: 3}
       propertyPath: m_Name
       value: LeftHand
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fa913981d66840043b655779c2f7d448, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1392595203298398570, guid: fa913981d66840043b655779c2f7d448, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2290,19 +2370,6 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!135 &7833146997608561951
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6950607150207542253}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.04
-  m_Center: {x: -0.03, y: 0.03, z: 0.03}
 --- !u!114 &7833146997608561936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2315,7 +2382,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b35308448cfbf54494c5c8ebca674cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  controller: {fileID: 0}
+  followSpeed: 30
+  rotateSpeed: 100
+  positionOffset: {x: 0, y: 0, z: 0}
+  rotationOffset: {x: 0, y: 0, z: 0}
+  palm: {fileID: 3178927936348829194}
+  reachDistance: 0.1
+  joinDistance: 0.05
+  grabableLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!4 &7221622727073129238 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8607304493346783830, guid: fa913981d66840043b655779c2f7d448, type: 3}
