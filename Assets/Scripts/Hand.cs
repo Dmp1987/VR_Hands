@@ -59,7 +59,7 @@ public class Hand : MonoBehaviour
     {
         //position
         var positionWithOffset = _followTarget.TransformPoint(positionOffset);
-        var distance = Vector3.Distance(_followTarget.position, transform.position);
+        var distance = Vector3.Distance(positionWithOffset, transform.position);
         _body.velocity = (positionWithOffset - transform.position).normalized * (followSpeed * distance);
 
         //rotation
@@ -71,7 +71,6 @@ public class Hand : MonoBehaviour
 
     private void Grab(InputAction.CallbackContext context)
     {
-        Debug.Log("DING!");
         if (_isGrabbing || _heldObject) return;
 
         Collider[] grabableColliders = Physics.OverlapSphere(palm.position, reachDistance, grabableLayer);
